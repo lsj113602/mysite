@@ -9,9 +9,14 @@ import {
 import {
   addCount
 } from '../HomePage/store/action';
+import './index.css';
 const HomeWrapper = styled.div`
-  width: 300px;
   height: 200px;
+  .city {
+    width: 200px;
+    height: 100px;
+    border: 1px solid red;
+  }
 `;
 
 
@@ -33,13 +38,13 @@ class HomePage extends React.Component {
         <h2>
           登陆页
         </h2>
-        <div>
+        <div className="sss">
           您当前的城市为：{cityName}
         </div>
         <div>
           你好：{userinfo.get('name')}
         </div>
-        <div>
+        <div >
           年龄：{userinfo.get('age')}
         </div>
       </HomeWrapper>
