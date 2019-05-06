@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 import './index.css';
 import App from './containers/App';
-import * as serviceWorker from './serviceWorker';
+//import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore';
 
 const MOUNT_NODE = document.getElementById('root');
@@ -19,11 +19,11 @@ const Render = () => {
       <Provider store={store}>
         <App />
       </Provider>
-    </CookiesProvider>,
+   </CookiesProvider>,
     MOUNT_NODE
   );
 };
 
 Render();
 
-serviceWorker.unregister();
+//serviceWorker.unregister();

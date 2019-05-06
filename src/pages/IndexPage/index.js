@@ -20,6 +20,10 @@ class HomePage extends React.Component {
     console.log('constructor')
     super(props, context);
   }
+  componentDidMount() {
+    this.props.changeCityActions({cityName: 'changsan'})
+    this.props.addCountActions(100)
+  }
   render() {
     console.log('render')
     const cityName = this.props.cityInfo.cityName;
@@ -41,10 +45,7 @@ class HomePage extends React.Component {
       </HomeWrapper>
     )
   }
-  componentDidMount() {
-    this.props.changeCityActions({cityName: 'changsan'})
-    this.props.addCountActions(100)
-  }
+
 }
 
 // -------------------redux react 绑定--------------------
@@ -61,7 +62,7 @@ function mapDispatchToProps(dispatch) {
   console.log('mapDispatchToProps')
   return {
     changeCityActions: bindActionCreators(change, dispatch),
-    addCountActions: bindActionCreators(addCount, dispatch),
+    addCountActions: bindActionCreators(addCount, dispatch)
   }
 }
 export default connect(

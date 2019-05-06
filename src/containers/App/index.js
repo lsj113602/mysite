@@ -13,9 +13,18 @@ class App extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={IndexPage} />
-          <Route exact path="/home" component={HomePage} />
-          <Route exact path="/login" component={LoginPage} />
+          <Route component={IndexPage}
+              exact
+              path="/"
+          />
+          <Route component={HomePage}
+              exact
+              path="/home"
+          />
+          <Route component={LoginPage}
+              exact
+              path="/login"
+          />
           <Route component={NotFoundPage} />
         </Switch>
       </Router>
@@ -25,6 +34,6 @@ class App extends React.Component {
 
 App.propTypes = {
   cookies: PropTypes.object,
-  location: PropTypes.object,
+  location: PropTypes.object
 };
 export default App;

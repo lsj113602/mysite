@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 class LoadingMsg extends React.Component {
-
   componentDidMount() {
     if (this.props.redirectPath) {
       this.timer = setTimeout(() => {
@@ -28,7 +27,7 @@ class LoadingMsg extends React.Component {
 LoadingMsg.propTypes = {
   msg: PropTypes.string,
   redirectPath: PropTypes.string,
-  history: PropTypes.object,
+  history: PropTypes.object
   // history: PropTypes.object.isRequired,
 };
 

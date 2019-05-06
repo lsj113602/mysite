@@ -9,14 +9,14 @@ export function addCount(num) {
   console.log('action -- addCount')
   return {
     type: ADD_COUNT,
-    num,
+    num
   };
 }
 
 export function minusCount(num) {
   return {
     type: MINUS_COUNT,
-    num,
+    num
   };
 }
 

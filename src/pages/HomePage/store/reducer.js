@@ -9,7 +9,7 @@ import {
 // The initial state of the App
 const initialState = fromJS({
   age: 0,
-  name: '张三',
+  name: '张三'
 });
 
 // const initialState = {

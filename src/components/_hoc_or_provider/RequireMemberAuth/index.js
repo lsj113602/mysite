@@ -2,22 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 import { withRouter } from 'react-router-dom';
-import axios from 'axios';
-
-import { TOKEN } from '../../../config/constants';
 import LoadingMsg from '../../LoadingMsg';
 
 export default function RequireMemberAuth(Component, reverseAuth) {
   class DecoratedComp extends React.Component {
     static propTypes = {
       cookies: PropTypes.instanceOf(Cookies).isRequired,
-      history: PropTypes.object,
+      history: PropTypes.object
     }
-
     constructor(props) {
       super(props);
       this.state = {
-        memberInfo: null,
+        memberInfo: null
       };
     }
 
@@ -38,9 +34,9 @@ export default function RequireMemberAuth(Component, reverseAuth) {
         const encode = encodeURIComponent(`${window.location.pathname}${search}`);
         content = (
           <LoadingMsg
-            key={'authFail'}
-            msg={'Loading...'}
-            redirectPath={`/login?backUrl=${encode}`}
+              key={'authFail'}
+              msg={'Loading...'}
+              redirectPath={`/login?backUrl=${encode}`}
           />
         );
       }

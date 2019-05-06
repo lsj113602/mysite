@@ -1,4 +1,3 @@
-import { fromJS } from 'immutable';
 // import { PENDING, FULFILLED, REJECTED } from 'redux-promise-middleware';
 
 import {
@@ -6,7 +5,7 @@ import {
 } from './constants';
 // import * as actionTypes from './constants';
 const cityInfo = {
-  cityName: '北京',
+  cityName: '北京'
 };
 
 
