@@ -1,0 +1,12 @@
+@charset "UTF-8";
+@import "../../utils/scss/base";
+@import "../../utils/scss/mixins";
+.sss {
+    width: 750px;
+    height: 100px;
+    border: 1px solid red;
+    box-sizing: border-box;
+    &__dd {
+        color: $main_color;
+    }
+}

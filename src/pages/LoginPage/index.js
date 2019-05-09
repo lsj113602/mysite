@@ -5,7 +5,14 @@ const HomeWrapper = styled.div`
   height: 200px;
 `;
 const HomePage = () => (
-  <HomeWrapper>登陆页</HomeWrapper>
+  <HomeWrapper>登陆页
+    <div>
+      <div>
+        111
+      </div>
+  </div>
+  </HomeWrapper>
+
 );
 
 export default HomePage;

@@ -9,7 +9,7 @@ import {
 import {
   addCount
 } from '../HomePage/store/action';
-import './index.css';
+import './index.scss';
 const HomeWrapper = styled.div`
   height: 200px;
   .city {
@@ -30,7 +30,7 @@ class HomePage extends React.Component {
     this.props.addCountActions(100)
   }
   render() {
-    console.log('render')
+    console.log('render');
     const cityName = this.props.cityInfo.cityName;
     const userinfo = this.props.userinfo;
     return (
@@ -40,6 +40,8 @@ class HomePage extends React.Component {
         </h2>
         <div className="sss">
           您当前的城市为：{cityName}
+          <div className="sss__dd">1111
+          </div>
         </div>
         <div>
           你好：{userinfo.get('name')}

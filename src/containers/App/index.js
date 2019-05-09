@@ -6,6 +6,7 @@ import NotFoundPage from '../../pages/NotFoundPage/Loadable';
 import IndexPage from '../../pages/IndexPage/Loadable';
 import HomePage from '../../pages/HomePage/Loadable';
 import LoginPage from '../../pages/LoginPage/Loadable';
+import MainPage from '../../pages/MainPage/Loadable';
 
 class App extends React.Component {
 
@@ -16,6 +17,10 @@ class App extends React.Component {
           <Route component={IndexPage}
               exact
               path="/"
+          />
+          <Route component={MainPage}
+              exact
+              path="/index"
           />
           <Route component={HomePage}
               exact
