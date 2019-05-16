@@ -14,11 +14,11 @@ class App extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route component={IndexPage}
+          <Route component={MainPage}
               exact
               path="/"
           />
-          <Route component={MainPage}
+          <Route component={IndexPage}
               exact
               path="/index"
           />
