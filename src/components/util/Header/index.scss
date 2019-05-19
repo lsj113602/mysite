@@ -33,7 +33,12 @@
       position: relative;
       height: 100%;
   }
-
+  &__back-btn {
+      position: absolute;
+      left: px(22);
+      top: px(26);
+      @include size(px(24), px(40));
+  }
   &__switch {
       position: absolute;
       right: px(25);

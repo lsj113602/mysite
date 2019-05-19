@@ -17,7 +17,7 @@ class App extends React.Component {
         <Switch>
           <Route component={MainPage}
               exact
-              path="/main"
+              path="/"
           />
           <Route component={IndexPage}
               exact
@@ -33,7 +33,7 @@ class App extends React.Component {
           />
           <Route component={ProductCenter}
               exact
-              path="/"
+              path="/productCenter"
           />
           <Route component={NotFoundPage} />
         </Switch>

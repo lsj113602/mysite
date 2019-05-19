@@ -1,9 +1,10 @@
 @charset "UTF-8";
 @import "../../../utils/scss/base";
 @import "../../../utils/scss/mixins";
-
-.content {
+.products {
   padding: px(96) 0 px(180) 0;
+}
+.content {
   &__nav {
     @include size(100%, px(250));
     border-bottom: px(2) solid #e0e0e0;

@@ -1,23 +1,30 @@
 import React from 'react';
 import './index.scss';
 import IndexPop from '../../pop/IndexPop';
+import { withRouter } from 'react-router-dom';
+
 
 
 class Header extends React.Component {
   constructor(props, context) {
-    console.log('constructor')
     super(props, context);
     this.state = {
-      toggle: false
+      toggle: false,
+      currentUrl: ''
     };
   }
   componentDidMount() {
+    this.setState({currentUrl: this.props.location&&this.props.location.pathname})
   }
   toggleChange = () => {
     this.setState({ toggle: !this.state.toggle });
   }
   loadDetailTab = (data) => {
     return data;
+  }
+  comeBack = () => {
+    this.props.history.goBack();
+    console.log(this.props.location.pathname);
   }
   render() {
     const language = <div className="header__language">Language</div>
@@ -26,6 +33,11 @@ class Header extends React.Component {
         {this.state.toggle?<IndexPop />:''}
         <div className="header">
           <div className="header__wrapper">
+            <img className="header__back-btn"
+                onClick={()=> {this.comeBack()}}
+                src="http://www.opple.com.cn/web/ucan/images/phone/return.png"
+                style={{display: (!this.state.toggle && this.state.currentUrl!=='/') ? 'block' : 'none'}}
+            />
             {this.state.toggle ? language : '晨曦极光'}
             <div className={this.state.toggle ? 'header__switch header__switch--cur' : 'header__switch'}
                 onClick={this.toggleChange}
@@ -41,4 +53,4 @@ class Header extends React.Component {
     )
   }
 }
-export default Header
+export default withRouter(Header)
