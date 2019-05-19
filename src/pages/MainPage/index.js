@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactSwipe from 'react-swipe';
 import './index.scss';
-import IndexPop from '../../components/pop/IndexPop';
+import Header from '../../components/util/Header';
+import Bottom from '../../components/util/Bottom';
 
 
 class MainPage extends React.Component {
@@ -15,9 +16,6 @@ class MainPage extends React.Component {
   }
   componentDidMount() {
   }
-  toggleChange = () => {
-    this.setState({ toggle: !this.state.toggle });
-  }
   render() {
     let opt = {
       auto: 2000,
@@ -26,22 +24,9 @@ class MainPage extends React.Component {
         this.setState({index: Number(index)})
       }.bind(this)
     }
-    const language = <div className="header__language">Language</div>
     return (
       <div className="main">
-        {this.state.toggle?<IndexPop />:''}
-        <div className="header">
-          <div className="header__wrapper">
-            {this.state.toggle ? language : '晨曦极光'}
-            <div className={this.state.toggle ? 'header__switch header__switch--cur' : 'header__switch'}
-                onClick={this.toggleChange}
-            >
-              <span className={this.state.toggle ? 'header__span header__cur' : 'header__span'}></span>
-              <span className={this.state.toggle ? 'header__span header__cur' : 'header__span'}></span>
-              <span className={this.state.toggle ? 'header__span header__cur' : 'header__span'}></span>
-            </div>
-          </div>
-        </div>
+        <Header />
         <div className="content">
             <div className="banner">
               <ReactSwipe className="carousel"
@@ -145,40 +130,7 @@ class MainPage extends React.Component {
                 </div>
             </div>
         </div>
-        <div className="bottom">
-            <div className="bottom__item">
-              <div className="bottom__icon">
-                <img className="bottom__icon"
-                    src="http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon05.png"
-                ></img>
-              </div>
-              家居空间
-            </div>
-            <div className="bottom__item">
-              <div className="bottom__icon">
-                <img className="bottom__icon"
-                    src="http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon06.png"
-                ></img>
-              </div>
-              商用照明
-            </div>
-            <div className="bottom__item">
-              <div className="bottom__icon">
-                <img className="bottom__icon"
-                    src="http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon07.png"
-                ></img>
-              </div>
-              产品中心
-            </div>
-            <div className="bottom__item">
-            <div className="bottom__icon">
-              <img className="bottom__icon"
-                  src="http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon09.png"
-              ></img>
-            </div>
-              客户服务
-            </div>
-        </div>
+        <Bottom />
       </div>
     )
   }
