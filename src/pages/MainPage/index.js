@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactSwipe from 'react-swipe';
 import './index.scss';
 import Header from '../../components/util/Header';
 import Bottom from '../../components/util/Bottom';
+import Banner from '../../components/util/Banner';
 
 
 class MainPage extends React.Component {
@@ -17,43 +17,11 @@ class MainPage extends React.Component {
   componentDidMount() {
   }
   render() {
-    let opt = {
-      auto: 2000,
-      callback: function(index) {
-        console.log(index);
-        this.setState({index: Number(index)})
-      }.bind(this)
-    }
     return (
       <div className="main">
         <Header />
         <div className="content">
-            <div className="banner">
-              <ReactSwipe className="carousel"
-                  swipeOptions={opt}
-              >
-                <div className="carousel-item">
-                  <img className="banner_img"
-                      src="http://www.opple.com.cn/upload/1106/1541508496.jpg"
-                  ></img>
-                </div>
-                <div className="carousel-item">
-                  <img className="banner_img"
-                      src="http://www.opple.com.cn/upload/indexbanner.png"
-                  ></img>
-                </div>
-                <div className="carousel-item">
-                  <img className="banner_img"
-                      src="http://www.opple.com.cn/web/static/oppo_m/images/index3.jpg"
-                  ></img>
-                </div>
-              </ReactSwipe>
-              <div className="banner__container">
-                  <span className={this.state.index === 0 ? 'banner__bullet selected': 'banner__bullet'}></span>
-                  <span className={this.state.index === 1 ? 'banner__bullet selected': 'banner__bullet'}></span>
-                  <span className={this.state.index === 2 ? 'banner__bullet selected': 'banner__bullet'}></span>
-              </div>
-            </div>
+            <Banner />
             <div className="content__body">
                 <div className="content__category">
                     <div className="content__category__image">

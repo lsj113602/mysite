@@ -1,3 +1,97 @@
 @charset "UTF-8";
-@import "../../utils/scss/base";
-@import "../../utils/scss/mixins";
+@import "../../../utils/scss/base";
+@import "../../../utils/scss/mixins";
+
+.content {
+  padding: px(96) 0 px(180) 0;
+  &__nav {
+    @include size(100%, px(250));
+    border-bottom: px(2) solid #e0e0e0;
+
+    &__item {
+      display: inline-block;
+      
+      @include size(33.3%, 100%);
+      text-align: center;
+      font-size: px(28);
+      color: #0046aa;
+      border-right: px(2) solid #e0e0e0;
+      box-sizing: border-box;
+
+      &:last-child {
+        border-right: px(0) solid #e0e0e0;
+      }
+    }
+    &__img {
+      margin-bottom: px(10);
+      @include size(100%, px(170));
+    }
+  }
+  
+  &__products {
+    padding: 0 px(20);
+
+    &__title {
+      line-height: px(140);
+
+      @include size(100%, px(140));
+      font-size: px(40);
+      color: #666;
+      text-align: center;
+    }
+    &__title-img {
+      margin-right: px(10);
+
+      @include size(px(40));
+      vertical-align:middle; 
+    }
+    &__title-span {
+      vertical-align:middle; 
+    }
+
+    &__ul {
+      margin-top: px(10);
+    }
+    &__ul-div1 {
+      position: relative;
+      @include size(100%, px(450));
+
+      &--h {
+        @include size(100%, px(680));
+      }
+    }
+    &__ul-div2 {
+      display: inline-block;
+      position: relative;
+      margin-right: px(10);
+
+      @include size(px(350), px(224));
+
+      &:nth-child(2n) {
+        margin-right: px(0);
+      }
+    }
+    &__img {
+      @include size(100%);
+    }
+    &__img-span {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      line-height: px(64);
+
+      @include size(100%, px(64));
+      background: rgba(247,143,44,.7);
+      color: #fff;
+      font-size: px(28);
+
+      &--blue {
+        background: rgba(0,70,170,.7);
+      }
+    }
+    &__img-span span{
+      margin-left: px(20);
+    }
+  }
+}

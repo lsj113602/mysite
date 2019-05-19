@@ -266,7 +266,6 @@ class IndexPop extends React.Component {
         </div>
       </div>
     ));
-    console.log(arr);
     return (
       <div className="pop">
         {arr}

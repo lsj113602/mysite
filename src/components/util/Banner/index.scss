@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@import "../../../utils/scss/base";
+@import "../../../utils/scss/mixins";
+
+.banner {
+  position: relative;
+  &__container {
+      position: absolute;
+      bottom: px(20);
+      width: 100%;
+      text-align: center;
+  }
+  &__bullet {
+      display: inline-block;
+      margin-left: px(20);
+
+      @include size(px(16));
+      border-radius: 100%;
+      background: #FFFFFF;
+  }
+  &__img {
+    width: 100%;
+    height: 760px;
+  }
+}
+.selected {
+  background: #f78f2c!important;
+}
