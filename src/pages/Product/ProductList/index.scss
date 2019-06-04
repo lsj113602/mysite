@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import "../../../utils/scss/base";
+@import "../../../utils/scss/mixins";
+.list {
+  padding: px(96) 0 px(180) 0;
+}
+.top {
+  height: px(360);
+  background: url('http://www.opple.com.cn/upload/ucan/pro/jjdj02.jpg') no-repeat center;
+  background-size: 100% 100%; 
+}

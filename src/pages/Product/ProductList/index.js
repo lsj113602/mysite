@@ -22,6 +22,9 @@ class ProductList extends React.Component {
       <div className="list">
         <Header />
         <div className="content">
+          <div className="top">
+
+          </div>
         </div>
         <Bottom />
       </div>

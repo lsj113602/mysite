@@ -8,6 +8,7 @@ import HomePage from '../../pages/HomePage/Loadable';
 import LoginPage from '../../pages/LoginPage/Loadable';
 import MainPage from '../../pages/MainPage/Loadable';
 import ProductCenter from '../../pages/Product/ProductCenter/Loadable';
+import productList from '../../pages/Product/ProductList/Loadable';
 
 class App extends React.Component {
 
@@ -17,7 +18,7 @@ class App extends React.Component {
         <Switch>
           <Route component={MainPage}
               exact
-              path="/"
+              path="/productList"
           />
           <Route component={IndexPage}
               exact
@@ -34,6 +35,10 @@ class App extends React.Component {
           <Route component={ProductCenter}
               exact
               path="/productCenter"
+          />
+          <Route component={productList}
+              exact
+              path="/"
           />
           <Route component={NotFoundPage} />
         </Switch>
