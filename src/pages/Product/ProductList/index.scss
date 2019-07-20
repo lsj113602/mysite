@@ -5,7 +5,48 @@
   padding: px(96) 0 px(180) 0;
 }
 .top {
+  position: relative;
+  padding: 0 px(24);
+
   height: px(360);
-  background: url('http://www.opple.com.cn/upload/ucan/pro/jjdj02.jpg') no-repeat center;
+  background: url($img_cdn_rul+'product/list/bg_top.jpg') no-repeat center;
   background-size: 100% 100%; 
+  background-size: cover;
+}
+
+.search {
+  padding-top: px(76); 
+  @include size(100%, px(76));
+  &__content {
+    display: flex;
+  }
+  &__input {
+    flex: 1;
+    padding: 0 px(20);
+    font-size: 14px;
+    background: #eeeeee;
+  
+    border: none;
+  }
+  &__btn {
+    margin-left: px(10);
+    @include size(px(160), px(76));
+    font-size: 14px;
+    color: #fff;
+    background: #0046aa;
+    border: 1px solid rgba(255,255,255,.8);
+  }
+  &__history {
+    &__span {
+      display: inline-block;
+      line-height: px(48);
+
+      margin: px(10) px(10) 0 0;
+      padding: 0 px(12);
+      background: rgba(255,255,255,.7);
+      color: #333;
+      font-size: px(24);
+      height: px(48);
+    }
+  }
 }
