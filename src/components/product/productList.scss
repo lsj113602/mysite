@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@import "../../utils/scss/base";
+@import "../../utils/scss/mixins";
+.go_cart {
+  position: fixed;
+  right: 0;
+  bottom: 20%;
+  padding: px(14) px(10);
+  font-size: px(24);
+  line-height: px(40);
+  width: px(40);
+
+  border: 1px solid #0046aa;
+  background: #0046aa;
+  color: #fff;
+  text-align: center;
+  z-index: 7;
+}

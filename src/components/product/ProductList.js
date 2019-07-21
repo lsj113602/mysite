@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import useProductList from '../../containers/CustomHook/useProductList'
 import userTest from '../../containers/CustomHook/userTest'
+import Itme from './Item'
+import './productList.scss';
 
 const ProductList = ({p_key, type}) => {
   // 你可以在这使用 Hook
@@ -10,14 +12,22 @@ const ProductList = ({p_key, type}) => {
   console.log('after:', list)
   const { countryData, handleCountry } = userTest();
   // handleCountry(p_key);
-  const ss = () => {
-    handleCountry('syj');
-  }
+  console.log(countryData);
   useEffect(() => {
     console.log('...............');
     handleCountry(p_key);
   }, [p_key]);
-  return <div onClick={ss}>点击{countryData.data}</div>;
+  return (
+    <div>
+      <Itme />
+      <Itme />
+      <Itme />
+      <Itme />
+      <div className="go_cart">
+        开始对比<p>(0)</p>
+      </div>
+    </div>
+  );
 }
 ProductList.propTypes = {
   p_key: PropTypes.string,

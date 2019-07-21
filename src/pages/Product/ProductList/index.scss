@@ -3,6 +3,8 @@
 @import "../../../utils/scss/mixins";
 .list {
   padding: px(96) 0 px(180) 0;
+  background: #f3f3f3;
+  min-height: 100vh;
 }
 .top {
   position: relative;

@@ -3,7 +3,7 @@ import React from 'react';
 import './index.scss';
 import Header from '../../../components/util/Header';
 import Bottom from '../../../components/util/Bottom';
-import List from '../../../components/product/ProductList';
+import ProductScreen from './comp/ProductScreen';
 
 
 
@@ -48,11 +48,8 @@ class ProductList extends React.Component {
               </div>
             </div>
           </div>
-          <div className="list">
-            <List p_key={this.state.p_key}
-                type={this.state.type}
-            />
-            <div onClick={this.changeKey}>改变key</div>
+          <div className="">
+            <ProductScreen p_key={this.state.p_key}/>
           </div>
         </div>
         <Bottom />

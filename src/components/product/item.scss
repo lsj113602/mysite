@@ -1,0 +1,57 @@
+@charset "UTF-8";
+@import "../../utils/scss/base";
+@import "../../utils/scss/mixins";
+p {
+  padding: 0;
+  margin: 0;
+}
+.product {
+  display: flex;
+  margin-bottom: px(20);
+  padding: px(20);
+
+  background: #ffffff;
+
+  &__left {
+    @include size(px(260));
+  }
+  &__right {
+    flex: 1;
+    margin-left: px(10);
+  }
+  &__img {
+    @include size(100%);
+  }
+
+  &__info {
+    padding-bottom: px(20);
+    line-height: px(40);
+
+    font-size: px(24);
+    color: #666;
+    border-bottom: px(2) solid #dfe2e4;
+  }
+  &__title {
+    line-height: px(44);
+    font-size: px(28);
+    color: #333;
+  }
+
+  &__add {
+    position: relative;
+
+    height: px(70);
+
+    &__btn {
+      position: absolute;
+      top: px(20);
+      right: px(20);
+      padding-left: px(30);
+
+      font-size: px(24);
+      color: #333;
+      background: url($img_cdn_rul+'icon/add_cart.png') no-repeat left 28px center;
+      background-position: left 0 center !important;
+    }
+  }
+}

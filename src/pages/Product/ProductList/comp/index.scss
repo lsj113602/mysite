@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@import "../../../../utils/scss/base";
+@import "../../../../utils/scss/mixins";
+.screen {
+  padding: 0 px(20);
+
+  &__list {
+    position: relative;
+    padding: px(60) 0 px(20);
+
+    &__item {
+      display: inline-block;
+      margin-right: px(10);
+      padding: 0 px(44) 0 px(18);
+      line-height: px(44);
+
+      font-size: px(24);
+      border: px(2) solid #b3b3b3;
+      color: #333;
+      background: url($img_cdn_rul + 'icon/arrow_low_blo.png') no-repeat right px(14) center;
+
+      &--select {
+        color: #ffffff;
+        background: #0046aa url($img_cdn_rul + 'icon/arrow_low.png') no-repeat right px(14) center;
+        border: px(2) solid #0046aa;
+      }
+    }
+    &__btn {
+      position: absolute;
+      right: 0;
+      bottom: px(20);
+      padding: 0 px(24);
+      line-height: px(48);
+
+      border: none !important;
+      background: #0046aa !important;
+      color: #fff;
+      font-size: px(24);
+      text-align: center;
+    }
+  }
+}

@@ -19,7 +19,7 @@ class Bottom extends React.Component {
         {
           img: 'http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon06.png',
           text: '商用照明',
-          linkUrl: '/'
+          linkUrl: '/productList'
         },
         {
           img: 'http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon07.png',
