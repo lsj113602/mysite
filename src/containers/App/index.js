@@ -9,6 +9,7 @@ import LoginPage from '../../pages/LoginPage/Loadable';
 import MainPage from '../../pages/MainPage/Loadable';
 import ProductCenter from '../../pages/Product/ProductCenter/Loadable';
 import productList from '../../pages/Product/ProductList/Loadable';
+import productDetail from '../../pages/Product/ProductDetail/Loadable'
 
 class App extends React.Component {
 
@@ -39,6 +40,10 @@ class App extends React.Component {
           <Route component={productList}
               exact
               path="/productList"
+          />
+          <Route component={productDetail}
+              exact
+              path="/productDetail/:id"
           />
           <Route component={NotFoundPage} />
         </Switch>
