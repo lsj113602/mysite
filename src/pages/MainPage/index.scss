@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import "../../utils/scss/base";
 @import "../../utils/scss/mixins";
+
 .main {
     padding: px(96) 0 px(180) 0;
 }
@@ -90,7 +91,7 @@
         font-size: px(24);
         color: #6e6e6e;
         padding-left: px(36);
-        background: url(http://www.opple.com.cn/web/ucan/images/about/rl.png) no-repeat left center;
+        background: url($img_cdn_rul+'icon/icon_time.png') no-repeat left center;
     }
 }
 .brand {

@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import { commonPath } from '../../../config/path';
 
 import { Link } from 'react-router-dom';
 
@@ -12,22 +13,22 @@ class Bottom extends React.Component {
       select: 999,
       bottomList: [
         {
-          img: 'http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon05.png',
+          img: `${commonPath.IMG_CND_URL}icon/footer_icon1.png`,
           text: '家居空间',
           linkUrl: '/'
         },
         {
-          img: 'http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon06.png',
+          img: `${commonPath.IMG_CND_URL}icon/footer_icon2.png`,
           text: '商用照明',
           linkUrl: '/productList'
         },
         {
-          img: 'http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon07.png',
+          img: `${commonPath.IMG_CND_URL}icon/footer_icon3.png`,
           text: '产品中心',
           linkUrl: '/productCenter'
         },
         {
-          img: 'http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon09.png',
+          img: `${commonPath.IMG_CND_URL}icon/footer_icon4.png`,
           text: '客户服务',
           linkUrl: '/'
         }

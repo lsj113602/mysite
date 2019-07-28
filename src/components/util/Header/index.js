@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.scss';
 import IndexPop from '../../pop/IndexPop';
+import { commonPath } from '../../../config/path';
 import { withRouter } from 'react-router-dom';
 
 
@@ -35,7 +36,7 @@ class Header extends React.Component {
           <div className="header__wrapper">
             <img className="header__back-btn"
                 onClick={()=> {this.comeBack()}}
-                src="http://www.opple.com.cn/web/ucan/images/phone/return.png"
+                src={`${commonPath.IMG_CND_URL}icon/icon_return.png`}
                 style={{display: (!this.state.toggle && this.state.currentUrl!=='/') ? 'block' : 'none'}}
             />
             {this.state.toggle ? language : '晨曦极光'}

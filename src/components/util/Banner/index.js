@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactSwipe from 'react-swipe';
 import './index.scss';
+import { commonPath } from '../../../config/path';
 
 
 class Banner extends React.Component {
@@ -8,28 +9,7 @@ class Banner extends React.Component {
     super(props, context);
     this.state = {
       index: 0,
-      bannerList: [
-        {
-          img: 'http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon05.png',
-          text: '家居空间',
-          linkUrl: ''
-        },
-        {
-          img: 'http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon06.png',
-          text: '商用照明',
-          linkUrl: ''
-        },
-        {
-          img: 'http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon07.png',
-          text: '产品中心',
-          linkUrl: ''
-        },
-        {
-          img: 'http://www.opple.com.cn/web/ucan/wap/images/phone/footer_icon09.png',
-          text: '客户服务',
-          linkUrl: ''
-        }
-      ]
+      bannerList: []
     };
   }
   componentDidMount() {
@@ -49,17 +29,17 @@ class Banner extends React.Component {
         >
           <div className="carousel-item">
             <img className="banner__img"
-                src="http://www.opple.com.cn/upload/1106/1541508496.jpg"
+                src={`${commonPath.IMG_CND_URL}index/index_banner1.png`}
             ></img>
           </div>
           <div className="carousel-item">
             <img className="banner__img"
-                src="http://www.opple.com.cn/upload/indexbanner.png"
+                src={`${commonPath.IMG_CND_URL}index/index_banner2.jpg`}
             ></img>
           </div>
           <div className="carousel-item">
             <img className="banner__img"
-                src="http://www.opple.com.cn/web/static/oppo_m/images/index3.jpg"
+                src={`${commonPath.IMG_CND_URL}index/index_banner3.jpg`}
             ></img>
           </div>
         </ReactSwipe>

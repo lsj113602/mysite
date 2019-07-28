@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import { commonPath } from '../../../config/path';
 
 
 class IndexPop extends React.Component {
@@ -15,8 +16,8 @@ class IndexPop extends React.Component {
       dataList: [
         {
           title: '家居空间',
-          titleImg: 'http://www.opple.com.cn/web/ucan/images/nav/nav01.png',
-          backgroundImg: 'http://www.opple.com.cn/web/ucan/images/nav/bck01.jpg',
+          titleImg: `${commonPath.IMG_CND_URL}index/nav01.png`,
+          backgroundImg: `${commonPath.IMG_CND_URL}index/bck01.jpg`,
           itemList: [
             {
               item: '一站式<br/>解决方案',
@@ -68,8 +69,8 @@ class IndexPop extends React.Component {
         },
         {
           title: '商用照明',
-          titleImg: 'http://www.opple.com.cn/web/ucan/images/nav/nav02.png',
-          backgroundImg: 'http://www.opple.com.cn/web/ucan/images/nav/bck06.jpg',
+          titleImg: `${commonPath.IMG_CND_URL}index/nav02.png`,
+          backgroundImg: `${commonPath.IMG_CND_URL}index/bck02.jpg`,
           itemList: [
             {
               item: '专业<br/>照明能力',
@@ -103,8 +104,8 @@ class IndexPop extends React.Component {
         },
         {
           title: '产品中心',
-          titleImg: 'http://www.opple.com.cn/web/ucan/images/nav/nav03.png',
-          backgroundImg: 'http://www.opple.com.cn/web/ucan/images/nav/bck02.jpg',
+          titleImg: `${commonPath.IMG_CND_URL}index/nav03.png`,
+          backgroundImg: `${commonPath.IMG_CND_URL}index/bck03.jpg`,
           itemList: [
             {
               item: '家具<br/>产品',
@@ -138,8 +139,8 @@ class IndexPop extends React.Component {
         },
         {
           title: '服务中心',
-          titleImg: 'http://www.opple.com.cn/web/ucan/images/nav/nav04.png',
-          backgroundImg: 'http://www.opple.com.cn/web/ucan/images/nav/bck03.jpg',
+          titleImg: `${commonPath.IMG_CND_URL}index/nav04.png`,
+          backgroundImg: `${commonPath.IMG_CND_URL}index/bck04.jpg`,
           itemList: [
             {
               item: '客户<br/>服务',
@@ -165,8 +166,8 @@ class IndexPop extends React.Component {
         },
         {
           title: '关于我们',
-          titleImg: 'http://www.opple.com.cn/web/ucan/images/nav/nav06.png',
-          backgroundImg: 'http://www.opple.com.cn/web/ucan/images/nav/bck05.jpg',
+          titleImg: `${commonPath.IMG_CND_URL}index/nav05.png`,
+          backgroundImg: `${commonPath.IMG_CND_URL}index/bck05.jpg`,
           itemList: [
             {
               item: '企业<br/>介绍',
