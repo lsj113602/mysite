@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './item.scss';
+import { commonPath } from '../../config/path';
 
 const ProductList = ({data}) => {
   // 你可以在这使用 Hook
@@ -9,7 +10,7 @@ const ProductList = ({data}) => {
     <div className="product">
       <div className="product__left">
         <img className="product__img"
-            src="http://www.opple.com.cn/upload/augrep/1440734505.jpg"
+            src={`${commonPath.IMG_CND_URL}product/info/1.jpg`}
         />
       </div>
       <div className="product__right">
