@@ -15,9 +15,9 @@ const ProductList = ({data}) => {
       </div>
       <div className="product__right">
         <div className="product__info">
-          <p className="product__title">MZX3434-12W-感应-叠影-4K-单头-金色-现代简约</p>
-          <p className="product__p">功率（W）：10W</p>
-          <p className="product__sale">规格尺寸(mm)：340*340*75mm</p>
+          <p className="product__title">MZX3434-12W-现代简约</p>
+          <p className="product__p">功率（W）：20W</p>
+          <p className="product__sale">规格尺寸(mm)：240*340*75mm</p>
           <p className="product__type">应用空间：卧室</p>
         </div>
         <div className="product__add">

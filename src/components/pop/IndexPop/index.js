@@ -17,7 +17,7 @@ class IndexPop extends React.Component {
         {
           title: '家居空间',
           titleImg: `${commonPath.IMG_CND_URL}index/nav01.png`,
-          backgroundImg: `${commonPath.IMG_CND_URL}index/bck01.jpg`,
+          backgroundImg: `${commonPath.IMG_CND_URL}index/bck01.png`,
           itemList: [
             {
               item: '一站式<br/>解决方案',
@@ -70,7 +70,7 @@ class IndexPop extends React.Component {
         {
           title: '商用照明',
           titleImg: `${commonPath.IMG_CND_URL}index/nav02.png`,
-          backgroundImg: `${commonPath.IMG_CND_URL}index/bck02.jpg`,
+          backgroundImg: `${commonPath.IMG_CND_URL}index/bck02.png`,
           itemList: [
             {
               item: '专业<br/>照明能力',
@@ -105,7 +105,7 @@ class IndexPop extends React.Component {
         {
           title: '产品中心',
           titleImg: `${commonPath.IMG_CND_URL}index/nav03.png`,
-          backgroundImg: `${commonPath.IMG_CND_URL}index/bck03.jpg`,
+          backgroundImg: `${commonPath.IMG_CND_URL}index/bck03.png`,
           itemList: [
             {
               item: '家具<br/>产品',
@@ -140,7 +140,7 @@ class IndexPop extends React.Component {
         {
           title: '服务中心',
           titleImg: `${commonPath.IMG_CND_URL}index/nav04.png`,
-          backgroundImg: `${commonPath.IMG_CND_URL}index/bck04.jpg`,
+          backgroundImg: `${commonPath.IMG_CND_URL}index/bck04.png`,
           itemList: [
             {
               item: '客户<br/>服务',
@@ -167,7 +167,7 @@ class IndexPop extends React.Component {
         {
           title: '关于我们',
           titleImg: `${commonPath.IMG_CND_URL}index/nav05.png`,
-          backgroundImg: `${commonPath.IMG_CND_URL}index/bck05.jpg`,
+          backgroundImg: `${commonPath.IMG_CND_URL}index/bck05.png`,
           itemList: [
             {
               item: '企业<br/>介绍',

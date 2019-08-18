@@ -34,12 +34,12 @@ class Banner extends React.Component {
           </div>
           <div className="carousel-item">
             <img className="banner__img"
-                src={`${commonPath.IMG_CND_URL}index/index_banner2.jpg`}
+                src={`${commonPath.IMG_CND_URL}index/index_banner2.png`}
             ></img>
           </div>
           <div className="carousel-item">
             <img className="banner__img"
-                src={`${commonPath.IMG_CND_URL}index/index_banner3.jpg`}
+                src={`${commonPath.IMG_CND_URL}index/index_banner3.png`}
             ></img>
           </div>
         </ReactSwipe>

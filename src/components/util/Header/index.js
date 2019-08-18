@@ -39,7 +39,7 @@ class Header extends React.Component {
                 src={`${commonPath.IMG_CND_URL}icon/icon_return.png`}
                 style={{display: (!this.state.toggle && this.state.currentUrl!=='/') ? 'block' : 'none'}}
             />
-            {this.state.toggle ? language : '晨曦极光'}
+            {this.state.toggle ? language : '宸曦极光'}
             <div className={this.state.toggle ? 'header__switch header__switch--cur' : 'header__switch'}
                 onClick={this.toggleChange}
             >

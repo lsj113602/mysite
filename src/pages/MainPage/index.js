@@ -27,13 +27,13 @@ class MainPage extends React.Component {
                 <div className="content__category">
                     <div className="content__category__image">
                       <img className="content__category__img"
-                          src={`${commonPath.IMG_CND_URL}index/jiaju.jpg`}
+                          src={`${commonPath.IMG_CND_URL}index/jiaju.png`}
                       ></img>
                       <span className="content__category__image-span">家居空间</span>
                     </div>
                     <div className="content__category__image">
                       <img className="content__category__img"
-                          src={`${commonPath.IMG_CND_URL}index/shangyong.jpg`}
+                          src={`${commonPath.IMG_CND_URL}index/shangyong.png`}
                       ></img>
                       <span className="content__category__image-span">商用照明</span>
                     </div>
@@ -41,7 +41,7 @@ class MainPage extends React.Component {
                 <div className="content__products">
                   <div className="content__products-image">
                     <img className="content__products-img"
-                        src={`${commonPath.IMG_CND_URL}index/chanpin.jpg`}
+                        src={`${commonPath.IMG_CND_URL}index/chanpin.png`}
                     ></img>
                     <span className="content__products-image-span">产品中心</span>
                   </div>
@@ -49,13 +49,13 @@ class MainPage extends React.Component {
                 <div className="content__category content__category--low">
                     <div className="content__category__image content__category__image--low">
                       <img className="content__category__img"
-                          src={`${commonPath.IMG_CND_URL}index/shehuizeren.jpg`}
+                          src={`${commonPath.IMG_CND_URL}index/shehuizeren.png`}
                       ></img>
                       <span className="content__category__image-span">社会责任</span>
                     </div>
                     <div className="content__category__image content__category__image--low">
                       <img className="content__category__img"
-                          src={`${commonPath.IMG_CND_URL}index/rencaipeiyang.jpg`}
+                          src={`${commonPath.IMG_CND_URL}index/rencaipeiyang.png`}
                       ></img>
                       <span className="content__category__image-span">人才培养</span>
                     </div>
@@ -65,16 +65,16 @@ class MainPage extends React.Component {
                   <div className="activity__title">最新活动</div>
                   <div className="activity__items">
                     <div className="activity__item">
-                      <div className="activity__item-content">欧普“超越所见”发布会，重新定义未来智慧生活</div>
-                      <div className="activity__item-time">2019-04-15</div>
+                      <div className="activity__item-content">宸曦极光新品发布会，让您遇见更美好的未来</div>
+                      <div className="activity__item-time">2019-08-15</div>
                     </div>
                     <div className="activity__item">
-                      <div className="activity__item-content">欧普“超越所见”发布会，重新定义未来智慧生活</div>
-                      <div className="activity__item-time">2019-04-15</div>
+                      <div className="activity__item-content">宸曦极光新品发布会，让您遇见更美好的未来</div>
+                      <div className="activity__item-time">2019-06-15</div>
                     </div>
                     <div className="activity__item">
-                      <div className="activity__item-content">欧普“超越所见”发布会，重新定义未来智慧生活</div>
-                      <div className="activity__item-time">2019-04-15</div>
+                      <div className="activity__item-content">宸曦极光新品发布会，让您遇见更美好的未来</div>
+                      <div className="activity__item-time">2019-05-15</div>
                     </div>
                   </div>
                 </div>
@@ -85,15 +85,15 @@ class MainPage extends React.Component {
                       <img className="brand__img"
                           src={`${commonPath.IMG_CND_URL}index/fabu1.png`}
                       ></img>
-                      <div className="brand__content">欧普“超越所见”发布会，重新定义未来智慧生活</div>
-                      <span className="brand__time">2019-04-15</span>
+                      <div className="brand__content">宸曦极光智能化工厂</div>
+                      <span className="brand__time">2019-06-05</span>
                     </div>
                     <div className="brand__item">
                       <img className="brand__img"
-                          src={`${commonPath.IMG_CND_URL}index/fabu2.jpg`}
+                          src={`${commonPath.IMG_CND_URL}index/fabu2.png`}
                       ></img>
-                      <div className="brand__content">欧普“超越所见”发布会，重新定义未来智慧生活</div>
-                      <span className="brand__time">2019-04-15</span>
+                      <div className="brand__content">宸曦极光智能化工厂</div>
+                      <span className="brand__time">2019-02-25</span>
                     </div>
                   </div>
                 </div>
