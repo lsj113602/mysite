@@ -1,3 +1,3 @@
 export const commonPath = {
-  IMG_CND_URL: 'http://localhost:8081/images/'
+  IMG_CND_URL: 'http://134.175.218.206/images/'
 };

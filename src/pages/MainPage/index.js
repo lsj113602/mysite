@@ -4,6 +4,7 @@ import { commonPath } from '../../config/path';
 import Header from '../../components/util/Header';
 import Bottom from '../../components/util/Bottom';
 import Banner from '../../components/util/Banner';
+import Video from '../../components/Video';
 
 
 class MainPage extends React.Component {
@@ -97,6 +98,22 @@ class MainPage extends React.Component {
                     </div>
                   </div>
                 </div>
+                <div calssName="">
+                <div className="brand__title">工厂实景</div>
+                  <div className="videolist">
+                    <div className="videolist__item">
+                      <Video mobileImgSrc={`${commonPath.IMG_CND_URL}product/productCenter/pro_img02.jpg`}
+                          videoSrc={`${commonPath.IMG_CND_URL}index/1.mp4`}
+                      />
+                    </div>
+                    <div className="videolist__item">
+                      <Video mobileImgSrc={`${commonPath.IMG_CND_URL}product/productCenter/pro_nav02.jpg`}
+                          videoSrc={`${commonPath.IMG_CND_URL}index/2.mp4`}
+                      />
+                    </div>
+                  </div>
+                </div>
+
             </div>
         </div>
         <Bottom />

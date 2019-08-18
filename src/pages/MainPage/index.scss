@@ -127,3 +127,11 @@
         color: #6e6e6e;
     }
 }
+.videolist {
+    display: flex;
+    justify-content: space-between;
+    &__item {
+        display: inline-block;
+        @include size(px(330), px(200));
+    }
+}
