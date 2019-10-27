@@ -21,8 +21,8 @@
 
       &--select {
         color: #ffffff;
-        background: #0046aa url($img_cdn_rul + 'icon/arrow_low.png') no-repeat right px(14) center;
-        border: px(2) solid #0046aa;
+        background: $main_color url($img_cdn_rul + 'icon/arrow_low.png') no-repeat right px(14) center;
+        border: px(2) solid $main_color;
       }
     }
     &__btn {
@@ -33,7 +33,7 @@
       line-height: px(48);
 
       border: none !important;
-      background: #0046aa !important;
+      background: $main_color !important;
       color: #fff;
       font-size: px(24);
       text-align: center;

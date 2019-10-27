@@ -19,7 +19,7 @@ class Bottom extends React.Component {
         },
         {
           img: `${commonPath.IMG_CND_URL}icon/footer_icon2.png`,
-          text: '商用照明',
+          text: '产品列表',
           linkUrl: '/productList'
         },
         {
@@ -29,7 +29,7 @@ class Bottom extends React.Component {
         },
         {
           img: `${commonPath.IMG_CND_URL}icon/footer_icon4.png`,
-          text: '客户服务',
+          text: '联系我们',
           linkUrl: '/'
         }
       ]
