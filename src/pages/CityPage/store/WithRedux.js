@@ -14,7 +14,8 @@ import {
   selectPrice
 } from './selector';
 import {
-  change
+  addCount,
+  minusCount
 } from './action';
 
 const Render = ({ children, ...props }) => (
