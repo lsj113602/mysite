@@ -11,7 +11,7 @@ import DefaultChooseProvider from '../../containers/DefaultChooseProvider';
 
 import {
   selectDepartureDate,
-  selectPrice
+  selectPrice,
 } from './selector';
 import {
   addCount,
@@ -22,14 +22,10 @@ const Render = ({ children, ...props }) => (
   <DateProvider id={props.id}>
     {
       (dateProps) => (
-        <HotelProvider departureDate={props.departureDate || dateProps.defaultDate}
-            id={props.id}
-        >
+        <HotelProvider id={props.id} departureDate={props.departureDate || dateProps.defaultDate}>
           {
             (hotelProps) => (
-              <FlightProvider departureDate={props.departureDate || dateProps.defaultDate}
-                  id={props.id}
-              >
+              <FlightProvider id={props.id} departureDate={props.departureDate || dateProps.defaultDate}>
                 {
                   (flightProps) => (
                     <DefaultChooseProvider id={props.id}>
@@ -55,7 +51,7 @@ const Render = ({ children, ...props }) => (
                           flightResource: defaultChooseProps.flight ? // eslint-disable-line
                             (props.flightProductId ? props.flightResource : flightProps.resource)
                             : (props.flightResource),
-                          departureCity: props.departureCity || flightProps.departureCity
+                          departureCity: props.departureCity || flightProps.departureCity,
                         })
                       }
                     </DefaultChooseProvider>
@@ -73,13 +69,13 @@ const Render = ({ children, ...props }) => (
 // 需要触发什么行为
 const mapDispatchToProps = (dispatch) => ({
   addCount: (num) => dispatch(addCount(num)),
-  minusCount: (num) => dispatch(minusCount(num))
+  minusCount: (num) => dispatch(minusCount(num)),
 });
 
 // 需要渲染什么数据
 const mapStateToProps = createStructuredSelector({
   departureDate: selectDepartureDate(),
-  totalPrice: selectPrice()
+  totalPrice: selectPrice(),
 });
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
@@ -99,7 +95,7 @@ Render.propTypes = {
   hotel: PropTypes.object,
   flightProductId: PropTypes.string,
   departureCity: PropTypes.string,
-  flightResource: PropTypes.object
+  flightResource: PropTypes.object,
 };
 
 export default compose(withConnect)(Render);
