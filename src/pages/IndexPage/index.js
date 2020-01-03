@@ -6,9 +6,6 @@ import styled from 'styled-components';
 import {
   change
 } from '../CityPage/store/action';
-import {
-  addCount
-} from '../HomePage/store/action';
 import './index.scss';
 const HomeWrapper = styled.div`
   height: 200px;
@@ -68,8 +65,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   console.log('mapDispatchToProps')
   return {
-    changeCityActions: bindActionCreators(change, dispatch),
-    addCountActions: bindActionCreators(addCount, dispatch)
+    changeCityActions: bindActionCreators(change, dispatch)
   }
 }
 export default connect(
