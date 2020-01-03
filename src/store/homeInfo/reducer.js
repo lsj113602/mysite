@@ -11,8 +11,8 @@ export default function (state = homeInfo, action) {
   switch (action.type) {
     case DEL_BANNER:
       return state.set('bannerList', []);
-    case `${FECTH_BANNER_LIST}`: console.log('actionaction:', action);
-      return state.set('bannerList', action.data);
+    case `${FECTH_BANNER_LIST}`:
+      return state.set('bannerList', action.data.list);
     case `${FECTH_BANNER_LIST}_${PENDING}`:
       return state.set('bannerList', []);
     case `${FECTH_BANNER_LIST}_${REJECTED}`:

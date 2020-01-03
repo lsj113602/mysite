@@ -147,7 +147,7 @@ const mapStateToProps = createStructuredSelector({
 });
 const mapDispatchToProps = (dispatch) => {
   return {
-    getBanners: (data) => dispatch(fecthBannerList(data))
+    getBanners: () => dispatch(fecthBannerList())
   }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage)

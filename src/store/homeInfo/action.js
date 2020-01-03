@@ -13,7 +13,7 @@ export function fecthBannerList2() {
   };
 }
 
-export const fecthBannerList1 = async () => {
+export const fecthBannerList = async () => {
   return {
     type: FECTH_BANNER_LIST,
     data: await axios.get(apiPath.INDEX_BANNER_LIST).then((res) => {
@@ -22,7 +22,7 @@ export const fecthBannerList1 = async () => {
   };
 }
 
-export const fecthBannerList = (data) => {
+export const fecthBannerList1 = (data) => {
   return {
     type: FECTH_BANNER_LIST,
     data: data
