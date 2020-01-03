@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import userInfo from '../pages/HomePage/store/reducer'
-import cityInfo from '../pages/CityPage/store/reducer'
+import homeInfo from './homeInfo/reducer'
+import cityInfo from './cityInfo/reducer'
 
 export default combineReducers({
-  userInfo,
+  homeInfo,
   cityInfo
 })

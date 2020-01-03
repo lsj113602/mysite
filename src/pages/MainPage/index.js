@@ -1,5 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types'
+import { createStructuredSelector } from 'reselect';
 import './index.scss';
+import { fetchIndexBanner } from '../../containers/requests/index';
+import { fecthBannerList } from '../../store/homeInfo/action';
+import { selectBannerList } from '../../store/homeInfo/selector';
 import { commonPath } from '../../config/path';
 import Header from '../../components/util/Header';
 import Bottom from '../../components/util/Bottom';
@@ -8,17 +14,26 @@ import Video from '../../components/Video';
 
 
 class MainPage extends React.Component {
+  static propTypes = {
+    bannerList: PropTypes.array,
+    getBanners: PropTypes.func
+  };
   constructor(props, context) {
-    console.log('constructor')
+    console.log('constructor');
     super(props, context);
     this.state = {
       toggle: false,
       index: 0
     };
   }
-  componentDidMount() {
+  async componentDidMount() {
+    const res = await fetchIndexBanner();
+    this.props.getBanners(res.list);
   }
   render() {
+    setTimeout(() => {
+      console.log('bannerList:', this.props.bannerList.length)
+    }, 5000);
     return (
       <div className="main">
         <Header />
@@ -121,4 +136,18 @@ class MainPage extends React.Component {
     )
   }
 }
-export default MainPage
+// const mapStateToProps2 = (state) => {
+//   console.log('state:', state.cityInfo.get('cityName'));
+//   return {
+//     cityName: selectCityName()
+//   }
+// };
+const mapStateToProps = createStructuredSelector({
+  bannerList: selectBannerList()
+});
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getBanners: (data) => dispatch(fecthBannerList(data))
+  }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage)

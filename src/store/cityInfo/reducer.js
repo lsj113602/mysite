@@ -1,9 +1,6 @@
 // import { PENDING, FULFILLED, REJECTED } from 'redux-promise-middleware';
 import { fromJS } from 'immutable';
-import {
-  CHANGE_CITY_NAME,
-  CHANGE_CITY_NAME1
-} from './constants';
+import { CHANGE_CITY_NAME, CHANGE_CITY_NAME1 } from './constants';
 // import * as actionTypes from './constants';
 // const cityInfo = {
 //   cityName: '北京'
