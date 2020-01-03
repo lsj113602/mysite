@@ -6,18 +6,20 @@ import {
   FECTH_BANNER_LIST
 } from './constants';
 
-export function fecthBannerList2() {
+export const fecthBannerList2 = async () => {
   return {
     type: FECTH_BANNER_LIST,
-    data: fetchIndexBanner()
+    payload: await fetchIndexBanner()
   };
 }
 
-export const fecthBannerList = async () => {
+export const fecthBannerList = () => {
   return {
     type: FECTH_BANNER_LIST,
-    data: await axios.get(apiPath.INDEX_BANNER_LIST).then((res) => {
-      return res.data.data;
+    payload: axios.get(apiPath.INDEX_BANNER_LIST).then((res) => {
+      if (res.data && res.data.code === 0) {
+        return res.data.data;
+      }
     })
   };
 }
@@ -25,6 +27,6 @@ export const fecthBannerList = async () => {
 export const fecthBannerList1 = (data) => {
   return {
     type: FECTH_BANNER_LIST,
-    data: data
+    payload: data
   };
 }
