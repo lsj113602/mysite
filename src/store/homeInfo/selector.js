@@ -8,7 +8,7 @@ const homeInfo = (state) => {
 
 const selectBannerList = () => createSelector(
   homeInfo,
-  (state) => state && state.get('bannerList')
+  (state) => (state && state.get('bannerList')) || []
 );
 
 export {

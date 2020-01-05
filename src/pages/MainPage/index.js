@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 import { createStructuredSelector } from 'reselect';
+import { groupBy } from 'lodash';
 import './index.scss';
-import { fetchIndexBanner } from '../../containers/requests/index';
+// import { fetchIndexBanner } from '../../containers/requests/index';
 import { fecthBannerList } from '../../store/homeInfo/action';
 import { selectBannerList } from '../../store/homeInfo/selector';
 import { commonPath } from '../../config/path';
@@ -15,7 +16,10 @@ import Video from '../../components/Video';
 
 class MainPage extends React.Component {
   static propTypes = {
-    bannerList: PropTypes.array,
+    bannerList: PropTypes.oneOfType([
+      PropTypes.array,
+      PropTypes.object
+    ]),
     getBanners: PropTypes.func
   };
   constructor(props, context) {
@@ -27,15 +31,25 @@ class MainPage extends React.Component {
     };
   }
   async componentDidMount() {
-    const res = await fetchIndexBanner();
-    this.props.getBanners(res.list);
+    this.props.getBanners();
+    // const res = await fetchIndexBanner();
+    // this.props.getBanners(res.list);
+    // const arr = groupBy(res.list, 'type');
   }
   render() {
-    setTimeout(() => {
-      console.log('bannerList:', this.props.bannerList.length)
-    }, 5000);
+    const arr = this.props.bannerList;
+    const dataObj = groupBy(arr, 'type');
+    const banner1 = dataObj['1'] || [];
+    const banner2 = dataObj['2'] || [];
+    const banner3 = dataObj['3'] || [];
+    const banner4 = dataObj['4'] || [];
+    const banner5 = dataObj['5'] || [];
+    console.log('banner:', banner1, banner2, banner3, banner4, banner5);
     return (
       <div className="main">
+        <img className="imgHidden"
+            src={`${commonPath.IMG_CND_URL}index/navbck.png`}
+        />
         <Header />
         <div className="content">
             <Banner />
@@ -113,7 +127,7 @@ class MainPage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div calssName="">
+                <div className="">
                 <div className="brand__title">工厂实景</div>
                   <div className="videolist">
                     <div className="videolist__item">

@@ -236,7 +236,7 @@ class IndexPop extends React.Component {
     const arr = this.state.dataList.map((item, index) => (
       <div className={this.state.cur === index ? 'pop__nav pop__nav--select':'pop__nav'}
           key={index}
-          style={this.state.cur === index ? this.loadCssFunc(item.backgroundImg) : {}}
+          // style={this.state.cur === index ? this.loadCssFunc(item.backgroundImg) : {}}
       >
         <div className={this.state.cur === index ? 'pop__title pop__title--select':'pop__title'}
             onClick={()=>{this.changeNav(index)}}
