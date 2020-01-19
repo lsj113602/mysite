@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { apiPath} from '../../config/path';
-import { fetchIndexBanner } from '../../containers/requests/index'
+import { fetchIndexBanner, fecthArticleList } from '../../containers/requests/index'
 
 import {
-  FECTH_BANNER_LIST
+  FECTH_BANNER_LIST,
+  FECTH_ARTICLE_LIST
 } from './constants';
 
 export const fecthBannerList2 = async () => {
@@ -21,6 +22,13 @@ export const fecthBannerList = () => {
         return res.data.data;
       }
     })
+  };
+}
+
+export const getArticleList = async () => {
+  return {
+    type: FECTH_ARTICLE_LIST,
+    payload: await fecthArticleList()
   };
 }
 

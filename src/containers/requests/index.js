@@ -14,6 +14,18 @@ export const fetchIndexBanner = async (payload) => {
   }
 };
 
+export const fecthArticleList = async (payload) => {
+  try {
+    console.log('INDEX_BANNER_LIST:', apiPath);
+    const res = await axios.get(apiPath.GET_ARTICLE_LIST, { params: { ...payload } });
+    if (res.data && res.data.code === 0) {
+      return res.data.data;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export const search = async (payload) => {
   try {
     const res = await axios.post(apiPath.INDEX_BANNER_LIST, payload);

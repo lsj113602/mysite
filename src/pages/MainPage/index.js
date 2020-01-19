@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 import { createStructuredSelector } from 'reselect';
 import { groupBy } from 'lodash';
+import moment from 'moment';
 import './index.scss';
 // import { fetchIndexBanner } from '../../containers/requests/index';
-import { fecthBannerList } from '../../store/homeInfo/action';
-import { selectBannerList } from '../../store/homeInfo/selector';
+import { fecthBannerList, getArticleList } from '../../store/homeInfo/action';
+import { selectBannerList, selectHomeArticleList } from '../../store/homeInfo/selector';
 import { commonPath } from '../../config/path';
 import Header from '../../components/util/Header';
 import Bottom from '../../components/util/Bottom';
@@ -32,6 +33,7 @@ class MainPage extends React.Component {
   }
   async componentDidMount() {
     this.props.getBanners();
+    this.props.getArticle();
     // const res = await fetchIndexBanner();
     // this.props.getBanners(res.list);
     // const arr = groupBy(res.list, 'type');
@@ -39,12 +41,16 @@ class MainPage extends React.Component {
   render() {
     const arr = this.props.bannerList;
     const dataObj = groupBy(arr, 'type');
-    const banner1 = dataObj['1'] || [];
-    const banner2 = dataObj['2'] || [];
-    const banner3 = dataObj['3'] || [];
-    const banner4 = dataObj['4'] || [];
-    const banner5 = dataObj['5'] || [];
-    console.log('banner:', banner1, banner2, banner3, banner4, banner5);
+    const banner1 = dataObj['1'] || []; // 首页轮播图
+    const banner2 = dataObj['2'] || []; // 产品类别
+    const banner3 = dataObj['3'] || []; // 产品中心
+    const banner4 = dataObj['4'] || []; // 公司计划
+    const banner5 = dataObj['5'] || []; // 视频
+    const banner6 = dataObj['6'] || []; // 公司新闻
+    const banner7 = dataObj['7'] || []; // 品牌资讯
+
+    const article = this.props.articleList;
+    console.log('banner:', banner1, banner2, banner3, banner4, banner5, banner6, banner7, article);
     return (
       <div className="main">
         <img className="imgHidden"
@@ -52,94 +58,99 @@ class MainPage extends React.Component {
         />
         <Header />
         <div className="content">
-            <Banner />
+            <Banner banners={banner1} />
             <div className="content__body">
+                {/*第一个栏位*/}
                 <div className="content__category">
-                    <div className="content__category__image">
-                      <img className="content__category__img"
-                          src={`${commonPath.IMG_CND_URL}index/jiaju.png`}
-                      ></img>
-                      <span className="content__category__image-span">家居空间</span>
-                    </div>
-                    <div className="content__category__image">
-                      <img className="content__category__img"
-                          src={`${commonPath.IMG_CND_URL}index/shangyong.png`}
-                      ></img>
-                      <span className="content__category__image-span">商用照明</span>
-                    </div>
+                  {
+                    banner2.map((d) => (
+                      <div className="content__category__image"
+                          key={d.icon}
+                      >
+                        <img className="content__category__img"
+                            src={d.icon}
+                        ></img>
+                        <span className="content__category__image-span">{d.name}</span>
+                      </div>))
+                  }
                 </div>
+                {/**/}
                 <div className="content__products">
-                  <div className="content__products-image">
-                    <img className="content__products-img"
-                        src={`${commonPath.IMG_CND_URL}index/chanpin.png`}
-                    ></img>
-                    <span className="content__products-image-span">产品中心</span>
-                  </div>
+                  {
+                    banner3.map((d) => (
+                      <div className="content__products-image"
+                          key={d.icon}
+                      >
+                        <img className="content__products-img"
+                            src={d.icon}
+                        ></img>
+                        <span className="content__products-image-span">{d.name}</span>
+                      </div>))
+                  }
                 </div>
+                {/**/}
                 <div className="content__category content__category--low">
-                    <div className="content__category__image content__category__image--low">
-                      <img className="content__category__img"
-                          src={`${commonPath.IMG_CND_URL}index/shehuizeren.png`}
-                      ></img>
-                      <span className="content__category__image-span">社会责任</span>
-                    </div>
-                    <div className="content__category__image content__category__image--low">
-                      <img className="content__category__img"
-                          src={`${commonPath.IMG_CND_URL}index/rencaipeiyang.png`}
-                      ></img>
-                      <span className="content__category__image-span">人才培养</span>
-                    </div>
+                  {
+                    banner4.map((d, idx) => (
+                      <div className="content__category__image content__category__image--low"
+                          key={idx}
+                      >
+                        <img className="content__category__img"
+                            src={d.icon}
+                        ></img>
+                        <span className="content__category__image-span">{d.name}</span>
+                      </div>
+                    ))
+                  }
                 </div>
                 <div className="advertising"></div>
                 <div className="activity">
                   <div className="activity__title">最新活动</div>
                   <div className="activity__items">
-                    <div className="activity__item">
-                      <div className="activity__item-content">宸曦极光新品发布会，让您遇见更美好的未来</div>
-                      <div className="activity__item-time">2019-08-15</div>
-                    </div>
-                    <div className="activity__item">
-                      <div className="activity__item-content">宸曦极光新品发布会，让您遇见更美好的未来</div>
-                      <div className="activity__item-time">2019-06-15</div>
-                    </div>
-                    <div className="activity__item">
-                      <div className="activity__item-content">宸曦极光新品发布会，让您遇见更美好的未来</div>
-                      <div className="activity__item-time">2019-05-15</div>
-                    </div>
+                    {
+                      article.map((a, idx) => (
+                        <div className="activity__item"
+                            key={idx}
+                        >
+                          <div className="activity__item-content">{a.title}</div>
+                          <div className="activity__item-time">{moment(a.create_time).format('YYYY-MM-DD')}</div>
+                        </div>
+                      ))
+                    }
                   </div>
                 </div>
                 <div className="brand">
                   <div className="brand__title">品牌资讯</div>
                   <div className="brand__items">
-                    <div className="brand__item">
-                      <img className="brand__img"
-                          src={`${commonPath.IMG_CND_URL}index/fabu1.png`}
-                      ></img>
-                      <div className="brand__content">宸曦极光智能化工厂</div>
-                      <span className="brand__time">2019-06-05</span>
-                    </div>
-                    <div className="brand__item">
-                      <img className="brand__img"
-                          src={`${commonPath.IMG_CND_URL}index/fabu2.png`}
-                      ></img>
-                      <div className="brand__content">宸曦极光智能化工厂</div>
-                      <span className="brand__time">2019-02-25</span>
-                    </div>
+                    {
+                      banner7.map((d, idx) => (
+                        <div className="brand__item"
+                            key={idx}
+                        >
+                          <img className="brand__img"
+                              src={d.icon}
+                          ></img>
+                          <div className="brand__content">{d.name}</div>
+                          <span className="brand__time">{moment(d.create_time).format('YYYY-MM-DD')}</span>
+                        </div>
+                      ))
+                    }
                   </div>
                 </div>
                 <div className="">
                 <div className="brand__title">工厂实景</div>
                   <div className="videolist">
-                    <div className="videolist__item">
-                      <Video mobileImgSrc={`${commonPath.IMG_CND_URL}product/productCenter/pro_img02.jpg`}
-                          videoSrc={`${commonPath.IMG_CND_URL}index/1.mp4`}
-                      />
-                    </div>
-                    <div className="videolist__item">
-                      <Video mobileImgSrc={`${commonPath.IMG_CND_URL}product/productCenter/pro_nav02.jpg`}
-                          videoSrc={`${commonPath.IMG_CND_URL}index/2.mp4`}
-                      />
-                    </div>
+                    {
+                      banner5.map((d, idx) => (
+                        <div className="videolist__item"
+                            key={idx}
+                        >
+                          <Video mobileImgSrc={d.icon}
+                              videoSrc={d.src}
+                          />
+                        </div>
+                      ))
+                    }
                   </div>
                 </div>
 
@@ -157,11 +168,13 @@ class MainPage extends React.Component {
 //   }
 // };
 const mapStateToProps = createStructuredSelector({
-  bannerList: selectBannerList()
+  bannerList: selectBannerList(),
+  articleList: selectHomeArticleList()
 });
 const mapDispatchToProps = (dispatch) => {
   return {
-    getBanners: () => dispatch(fecthBannerList())
+    getBanners: () => dispatch(fecthBannerList()),
+    getArticle: () => dispatch(getArticleList())
   }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage)

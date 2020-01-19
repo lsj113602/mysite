@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactSwipe from 'react-swipe';
+import PropTypes from 'prop-types';
 import './index.scss';
-import { commonPath } from '../../../config/path';
 
 
 class Banner extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      index: 0,
-      bannerList: []
+      index: 0
     };
   }
   componentDidMount() {
@@ -21,35 +20,37 @@ class Banner extends React.Component {
         console.log(index);
         this.setState({index: Number(index)})
       }.bind(this)
-    }
+    };
+    const list = Array.isArray(this.props.banners) && this.props.banners.map((d) => (
+      <div className="carousel-item"
+          key={d.icon}
+      >
+        <img className="banner__img"
+            src={d.icon}
+        ></img>
+      </div>
+    ));
+    const containerList = Array.isArray(this.props.banners) && this.props.banners.map((d, idx) => (
+      <span className={this.state.index === idx ? 'banner__bullet selected': 'banner__bullet'}
+          key={idx}
+      >
+      </span>
+    ));
     return (
       <div className="banner">
         <ReactSwipe className="carousel"
             swipeOptions={opt}
         >
-          <div className="carousel-item">
-            <img className="banner__img"
-                src={`${commonPath.IMG_CND_URL}index/index_banner1.png`}
-            ></img>
-          </div>
-          <div className="carousel-item">
-            <img className="banner__img"
-                src={`${commonPath.IMG_CND_URL}index/index_banner2.png`}
-            ></img>
-          </div>
-          <div className="carousel-item">
-            <img className="banner__img"
-                src={`${commonPath.IMG_CND_URL}index/index_banner3.png`}
-            ></img>
-          </div>
+          {list}
         </ReactSwipe>
         <div className="banner__container">
-            <span className={this.state.index === 0 ? 'banner__bullet selected': 'banner__bullet'}></span>
-            <span className={this.state.index === 1 ? 'banner__bullet selected': 'banner__bullet'}></span>
-            <span className={this.state.index === 2 ? 'banner__bullet selected': 'banner__bullet'}></span>
+          {containerList}
         </div>
           </div>
     )
   }
 }
+Banner.propTypes = {
+  banners: PropTypes.array
+};
 export default Banner
