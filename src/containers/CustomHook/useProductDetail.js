@@ -1,10 +1,25 @@
 import { useState } from 'react';
+import { fetchProductDesc, fetchProduct } from '../requests/product';
 
-function useProductDetail() {
+const useProductDetail = () => {
   const [productObj, setProductObj] = useState([]);
-  function getProductById(key) {
-    setProductObj([key]);
+  const getProductById = async (pId) => {
+    const res = await fetchProductDesc({id: pId});
+    console.log('data:', res);
+    setProductObj(res);
   }
   return {productObj, getProductById};
 }
-export default useProductDetail;
+const useProductList = () => {
+  const [productList, setProductObj] = useState([]);
+  const getProductList = async () => {
+    const res = await fetchProduct({});
+    console.log('data:', res);
+    setProductObj(res.list || []);
+  }
+  return {productList, getProductList};
+}
+export {
+  useProductDetail,
+  useProductList
+};

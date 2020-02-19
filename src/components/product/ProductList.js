@@ -1,11 +1,14 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import useProductList from '../../containers/CustomHook/useProductList'
 import userTest from '../../containers/CustomHook/userTest'
+import { selectCartList } from '../../store/product/selector';
 import Itme from './Item'
 import './productList.scss';
 
-const ProductList = ({p_key, type}) => {
+const ProductList = ({p_key, type, data, cartList}) => {
   // 你可以在这使用 Hook
   console.log('before:', p_key, type);
   const list = useProductList(p_key);
@@ -14,17 +17,19 @@ const ProductList = ({p_key, type}) => {
   // handleCountry(p_key);
   console.log(countryData);
   useEffect(() => {
-    console.log('...............');
     handleCountry(p_key);
   }, [p_key]);
   return (
     <div>
-      <Itme />
-      <Itme />
-      <Itme />
-      <Itme />
+      {
+        data.map((d, idx) => (
+          <Itme
+              data={d}
+              key={idx}
+          />))
+      }
       <div className="go_cart">
-        开始对比<p>(0)</p>
+        开始对比<p>({cartList.length})</p>
       </div>
     </div>
   );
@@ -34,4 +39,11 @@ ProductList.propTypes = {
   type: PropTypes.number
 };
 
-export default ProductList;
+const mapStateToProps = createStructuredSelector({
+  cartList: selectCartList()
+});
+const mapDispatchToProps = () => {
+  return {
+  }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ProductList from '../../../../components/product/ProductList';
 import './index.scss';
 
-const ProductScreen = ({p_key}) => {
+const ProductScreen = ({p_key, data}) => {
   // 你可以在这使用 Hook
   console.log(p_key);
   const navList = [
@@ -34,12 +34,13 @@ const ProductScreen = ({p_key}) => {
           }
         <span className="screen__list__btn">开始筛选</span>
       </div>
-      <ProductList />
+      <ProductList data={data}/>
     </div>
   );
 }
 ProductScreen.propTypes = {
-  p_key: PropTypes.string
+  p_key: PropTypes.string,
+  data: PropTypes.array
 };
 
 export default ProductScreen;

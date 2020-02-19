@@ -1,9 +1,9 @@
 import React from 'react';
-// import { commonPath } from '../../../config/path';
 import './index.scss';
 import Header from '../../../components/util/Header';
 import Bottom from '../../../components/util/Bottom';
 import ProductScreen from './comp/ProductScreen';
+import { fetchProduct } from '../../../containers/requests/product';
 
 
 
@@ -14,17 +14,23 @@ class ProductList extends React.Component {
       toggle: false,
       history: ['卧室灯' , '餐厅灯', '客厅灯长方形', '吊灯客厅', '客厅灯具', '客厅灯现代简约' ],
       p_key: 'lsj',
-      type: 33
+      type: 33,
+      products: []
     };
   }
   componentDidMount() {
+    this.getProduct();
   }
+  getProduct = async () => {
+    const arr = await fetchProduct();
+    this.setState({ products: arr.list || [] });
+  };
   toggleChange = () => {
     this.setState({ toggle: !this.state.toggle });
-  }
+  };
   changeKey = () => {
     this.setState({ p_key: this.state.p_key + '1'});
-  }
+  };
   render() {
     return (
       <div className="list">
@@ -49,7 +55,10 @@ class ProductList extends React.Component {
             </div>
           </div>
           <div className="">
-            <ProductScreen p_key={this.state.p_key}/>
+            <ProductScreen
+                data={this.state.products}
+                p_key={this.state.p_key}
+            />
           </div>
         </div>
         <Bottom />

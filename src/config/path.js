@@ -14,7 +14,10 @@ export const commonPath = {
 
 const apiPathObj = {
   INDEX_BANNER_LIST: 'link/getLinkList',
-  GET_ARTICLE_LIST: 'article/getArticleList'
+  GET_ARTICLE_LIST: 'article/getArticleList',
+  GET_PRODUCT_LIST: 'product/getProductList',
+  GET_PRODUCT_DESC: 'product/getProductDesc',
+  ADD_CART: 'product/addCard'
 };
 
 export const apiPath = applyPrefix('http://localhost:8000/api/', apiPathObj);

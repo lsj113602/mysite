@@ -9,7 +9,7 @@ const homeInfo = fromJS({
 });
 
 export default function (state = homeInfo, action) {
-  console.log('action:', action);
+  console.log('action1111:', action);
   switch (action.type) {
     case DEL_BANNER:
       return state.set('bannerList', []);
