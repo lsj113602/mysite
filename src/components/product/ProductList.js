@@ -2,23 +2,28 @@ import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { withRouter } from 'react-router-dom';
+import { getCart } from '../../utils/cartUnit';
 import useProductList from '../../containers/CustomHook/useProductList'
 import userTest from '../../containers/CustomHook/userTest'
 import { selectCartList } from '../../store/product/selector';
 import Itme from './Item'
 import './productList.scss';
 
-const ProductList = ({p_key, type, data, cartList}) => {
+const ProductList = ({p_key, data, hideBtn, history}) => {
   // 你可以在这使用 Hook
-  console.log('before:', p_key, type);
   const list = useProductList(p_key);
-  console.log('after:', list)
+  const cartArr = getCart();
+  console.log('after:', list);
   const { countryData, handleCountry } = userTest();
   // handleCountry(p_key);
   console.log(countryData);
   useEffect(() => {
     handleCountry(p_key);
   }, [p_key]);
+  const toCart = () => {
+    history.push('/productCart');
+  };
   return (
     <div>
       {
@@ -28,9 +33,13 @@ const ProductList = ({p_key, type, data, cartList}) => {
               key={idx}
           />))
       }
-      <div className="go_cart">
-        开始对比<p>({cartList.length})</p>
-      </div>
+      {
+        !hideBtn &&
+        <div className="go_cart"
+            onClick={() => toCart()}>
+          开始对比<p>({cartArr.length})</p>
+        </div>
+      }
     </div>
   );
 }
@@ -46,4 +55,4 @@ const mapDispatchToProps = () => {
   return {
   }
 };
-export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProductList));

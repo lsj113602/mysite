@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.scss';
 import IndexPop from '../../pop/IndexPop';
 import { commonPath } from '../../../config/path';
@@ -39,7 +40,7 @@ class Header extends React.Component {
                 src={`${commonPath.IMG_CND_URL}icon/icon_return.png`}
                 style={{display: (!this.state.toggle && this.state.currentUrl!=='/') ? 'block' : 'none'}}
             />
-            {this.state.toggle ? language : '宸曦极光'}
+            {this.state.toggle ? language : this.props.title || '宸曦极光'}
             <div className={this.state.toggle ? 'header__switch header__switch--cur' : 'header__switch'}
                 onClick={this.toggleChange}
             >
@@ -54,4 +55,7 @@ class Header extends React.Component {
     )
   }
 }
+Header.propTypes = {
+  title: PropTypes.string
+};
 export default withRouter(Header)

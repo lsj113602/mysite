@@ -1,17 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect }from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import './itemsmall.scss';
+import { addCart, delCart, getCart } from '../../utils/cartUnit';
 import { selectCartList } from '../../store/product/selector';
 import { setCart } from '../../store/product/action';
 
-const ProductList = ({data = {}, addToCart, cartList, history}) => {
+const ProductList = ({data = {}, addToCart, history}) => {
   // 你可以在这使用 Hook
-  const addCart = (obj) => {
-    addToCart([obj, ...cartList]);
+  const [cart, setCart] = useState([]);
+  const isExist = cart.find(c => parseInt(c) === parseInt(data.id));
+  const btn_text = isExist ? '取消对比' : '加入对比';
+  useEffect(() => {
+    const arr = getCart();
+    setCart(arr);
+    return () => {
+    };
+  }, [data.id]);
+  const add = (obj) => {
+    console.log('obj:', obj.id);
+    let arr = [];
+    if (isExist) {
+      arr = delCart(obj.id);
+    } else {
+      arr = addCart(obj.id);
+    }
+    addToCart(arr);
+    setCart(arr);
   };
   const changePDP = (id) => {
     history.push(`/productDetail/${id}`);
@@ -28,9 +46,9 @@ const ProductList = ({data = {}, addToCart, cartList, history}) => {
         <div className="small__title">{data.title}</div>
       </div>
       <div className="small__add"
-          onClick={() => addCart(data)}
+          onClick={() => add(data)}
       >
-        加入对比
+        {btn_text}
       </div>
     </div>
   );

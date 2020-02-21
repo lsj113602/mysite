@@ -2,7 +2,8 @@
 @import "./vars";
 @import "./mixins";
 
-$img_cdn_rul: 'http://134.175.218.206/images/';
+//$img_cdn_rul: 'http://134.175.218.206/images/';
+$img_cdn_rul: 'http://localhost:8081/images/';
 $tab_bar_height: 164;  //  tabbar 高度
 $tab_bar_img_h: 140;  //  tabbar 图片高度
 $main_color: #ff6900;  // web主颜色 #0046aa

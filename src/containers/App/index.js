@@ -10,7 +10,9 @@ import LoginPage from '../../pages/LoginPage/Loadable';
 import MainPage from '../../pages/MainPage/Loadable';
 import ProductCenter from '../../pages/Product/ProductCenter/Loadable';
 import productList from '../../pages/Product/ProductList/Loadable';
-import productDetail from '../../pages/Product/ProductDetail/Loadable'
+import productDetail from '../../pages/Product/ProductDetail/Loadable';
+import productCart from '../../pages/Product/ProductCart/Loadable';
+import aboutUs from '../../pages/AboutUs/Loadable';
 
 class App extends React.Component {
 
@@ -53,6 +55,14 @@ class App extends React.Component {
           <Route component={productDetail}
               exact
               path="/productDetail/:id"
+          />
+          <Route component={productCart}
+              exact
+              path="/productCart"
+          />
+          <Route component={aboutUs}
+              exact
+              path="/aboutUs"
           />
           <Route component={NotFoundPage} />
         </Switch>

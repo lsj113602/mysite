@@ -106,14 +106,15 @@ table tr td:first-child {
     }
     &--btn {
       position: relative;
+      padding-right: 30px;
     }
-    &--btn::before {
+    &--btn::after {
       position: absolute;
-      top: 10px;
-      left: -10px;
+      top: 3px;
+      right: 5px;
       content: '';
-      background: url($img_cdn_rul + 'icon/add_cart.png') no-repeat center;
-      width: 30px;
+      background: url($img_cdn_rul + 'icon/refresh_icon.png') no-repeat center/100%;
+      width: 20px;
       height: 30px;
     }
   }
@@ -128,6 +129,21 @@ table tr td:first-child {
     width: 48%;
     margin-bottom: 20px;
   }
+}
+.go_cart {
+  position: fixed;
+  right: 0;
+  bottom: 20%;
+  padding: px(14) px(10);
+  font-size: px(24);
+  line-height: px(40);
+  width: px(40);
+
+  border: 1px solid $main_color;
+  background: $main_color;
+  color: #fff;
+  text-align: center;
+  z-index: 7;
 }
 
 

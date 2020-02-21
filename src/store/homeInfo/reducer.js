@@ -20,9 +20,9 @@ export default function (state = homeInfo, action) {
     case `${FECTH_BANNER_LIST}_${REJECTED}`:
       return state.set('name', '');
     case `${FECTH_BANNER_LIST}`:
-      return state.set('bannerList', action.payload.list);
+      return state.set('bannerList', action.payload && action.payload.list);
     case `${FECTH_ARTICLE_LIST}`:
-      return state.set('articleList', action.payload.list);
+      return state.set('articleList', action.payload && action.payload.list);
     default:
       return state;
   }

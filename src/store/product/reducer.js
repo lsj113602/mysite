@@ -7,7 +7,7 @@ const product = fromJS({
 
 export default function (state = product, action) {
   switch (action.type) {
-    case `${SET_CART}`: console.log(11111, action.payload);
+    case `${SET_CART}`:
       return state.set('cartList', action.payload);
     default:
       return state;

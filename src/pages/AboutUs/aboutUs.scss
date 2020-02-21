@@ -1,0 +1,47 @@
+@charset "UTF-8";
+@import "../../utils/scss/base";
+@import "../../utils/scss/mixins";
+
+.about {
+  padding: 126px 32px 140px;
+
+  &__content {
+
+  }
+  &__title {
+    height: 240px;
+    text-align: center;
+    color: #333333;
+    font-size: 60px;
+    font-weight: bold;
+    border-bottom: px(2) solid #e0e0e0;
+  }
+  &__p {
+    padding: 0;
+    margin: 0;
+    font-size: px(30);
+    color: #0046aa;
+  }
+  &__a {
+    text-decoration:none;
+    color: #0046aa;
+  }
+}
+.about-text {
+  &__title {
+    margin-top: px(20);
+    font-size: px(36);
+    color: rgb(231, 92, 92);
+    line-height: px(60);
+  }
+  &__content {
+    font-size: px(30);
+    color: rgb(99, 98, 98);
+    line-height: px(60);
+  }
+}
+.about-span {
+  display: block;
+  text-indent: 2em;
+  text-align: left;
+}

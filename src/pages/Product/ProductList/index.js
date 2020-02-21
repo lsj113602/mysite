@@ -21,8 +21,8 @@ class ProductList extends React.Component {
   componentDidMount() {
     this.getProduct();
   }
-  getProduct = async () => {
-    const arr = await fetchProduct();
+  getProduct = async (payload) => {
+    const arr = await fetchProduct(payload);
     this.setState({ products: arr.list || [] });
   };
   toggleChange = () => {
@@ -31,10 +31,19 @@ class ProductList extends React.Component {
   changeKey = () => {
     this.setState({ p_key: this.state.p_key + '1'});
   };
+  switchNav = (key) => {
+    console.log('key:', key);
+    if (key) {
+      this.getProduct({[key]: true});
+    } else {
+      this.getProduct({});
+    }
+
+  };
   render() {
     return (
       <div className="list">
-        <Header />
+        <Header title="产品列表"/>
         <div className="content">
           <div className="top">
             <div className="search">
@@ -58,6 +67,7 @@ class ProductList extends React.Component {
             <ProductScreen
                 data={this.state.products}
                 p_key={this.state.p_key}
+                switchNav={this.switchNav}
             />
           </div>
         </div>

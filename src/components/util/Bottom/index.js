@@ -29,8 +29,8 @@ class Bottom extends React.Component {
         },
         {
           img: `${commonPath.IMG_CND_URL}icon/footer_icon4.png`,
-          text: '联系我们',
-          linkUrl: '/'
+          text: '关于我们',
+          linkUrl: '/aboutUs'
         }
       ]
     };

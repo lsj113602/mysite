@@ -52,6 +52,11 @@ p {
       color: #333;
       background: url($img_cdn_rul + 'icon/add_cart.png') no-repeat left 28px center;
       background-position: left 0 center !important;
+
+      &--reduce {
+        background: url($img_cdn_rul + 'icon/reduce_icon.png') no-repeat left 38px center;
+        background-size: 25px;
+      }
     }
   }
 }

@@ -7,18 +7,17 @@ const useProductDetail = () => {
     const res = await fetchProductDesc({id: pId});
     console.log('data:', res);
     setProductObj(res);
-  }
+  };
   return {productObj, getProductById};
-}
+};
 const useProductList = () => {
   const [productList, setProductObj] = useState([]);
-  const getProductList = async () => {
-    const res = await fetchProduct({});
-    console.log('data:', res);
+  const getProductList = async (payload = {}) => {
+    const res = await fetchProduct(payload);
     setProductObj(res.list || []);
-  }
+  };
   return {productList, getProductList};
-}
+};
 export {
   useProductDetail,
   useProductList

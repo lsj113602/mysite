@@ -1,6 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import { selectCartList } from '../../../store/product/selector';
+import { setCart } from '../../../store/product/action';
+
+import { addCart, getCart, delCart } from '../../../utils/cartUnit';
 import Header from '../../../components/util/Header';
 import Banner from '../../../components/util/Banner';
 import ProductItem from '../../../components/product/ItemSmall';
@@ -9,25 +15,20 @@ import './index.scss';
 
 const ProductDetail = (props) => {
   // 你可以在这使用 Hook
+  const { addToCart, cartList } = props;
   const { id } = props.match.params;
   const {productObj, getProductById} = useProductDetail();
   const {productList, getProductList} = useProductList();
+  const [cart, setCart] = useState([]);
   const banners = [{icon: productObj.logoImg}];
   useEffect(() => {
     getProductById(id);
-    return () => {
-      console.log('after-->useEffect');
-    };
-  }, [id]);
-  useEffect(() => {
     getProductList(id);
+    const arr = getCart();
+    setCart(arr);
     return () => {
-      console.log('after-->useEffect');
     };
   }, [id]);
-  // const changeProductDetail = (id) => {
-  //   props.history.push(`/productDetail/${id}`);
-  // };
   const descArr = (productObj.desc && productObj.desc.split(';')) || [];
   const images = productObj.imgList && productObj.imgList.length > 0 &&
     productObj.imgList.map((img, idx) =>
@@ -35,6 +36,22 @@ const ProductDetail = (props) => {
           key={idx}
           src={img}
       />);
+  const isExist = cart.find(c => parseInt(c) === parseInt(id));
+  const btn_text = isExist ? '取消对比' : '加入对比';
+  const add = (id) => {
+    let arr = [];
+    if (isExist) {
+      arr = delCart(id);
+    } else {
+      arr = addCart(id);
+    }
+    // 存redux
+    addToCart(arr);
+    setCart(arr);
+  };
+  const toCart = () => {
+    props.history.push('/productCart');
+  };
   return (
     <div className="desc">
       <Header />
@@ -47,7 +64,9 @@ const ProductDetail = (props) => {
             descArr.map((d, idx) => <p key={idx}>{d}</p>)
           }
         </div>
-        <div className="product__add">加入对比</div>
+        <div className="product__add"
+            onClick={() => add(productObj.id)}
+        >{btn_text}</div>
         <div className="product__desc">
           <div className="desc-title">参数配置</div>
           <table
@@ -121,11 +140,27 @@ const ProductDetail = (props) => {
           }
         </div>
       </div>
+      <div className="go_cart"
+          onClick={() => toCart()}
+      >
+        开始对比<p>({cartList.length || 0})</p>
+      </div>
     </div>
   );
 }
 ProductDetail.propTypes = {
   p_key: PropTypes.string
 };
-
-export default withRouter(ProductDetail);
+const mapStateToProps = createStructuredSelector({
+  cartList: selectCartList()
+});
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (data) => dispatch(setCart(data))
+  }
+};
+const ProductD= withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProductDetail));
+export default withRouter(ProductD);

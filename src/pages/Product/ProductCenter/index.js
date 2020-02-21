@@ -23,7 +23,7 @@ class ProductList extends React.Component {
   render() {
     return (
       <div className="products">
-        <Header />
+        <Header title="产品中心"/>
         <div className="content">
           <Banner />
           <div className="content__nav">
