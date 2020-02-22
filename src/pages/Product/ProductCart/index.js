@@ -11,6 +11,7 @@ import Header from '../../../components/util/Header';
 import { useProductList } from '../../../containers/CustomHook/useProductDetail';
 import './productCart.scss';
 import ProductList from '../../../components/product/ProductList';
+import Empty from '../../../components/util/Empty';
 
 const ProductDetail = (props) => {
   const { cartList } = props;
@@ -27,8 +28,13 @@ const ProductDetail = (props) => {
   return (
     <div className="cart">
       <Header title="我的对比列表"/>
-      <ProductList data={productList}
-          hideBtn="true"/>
+      {
+        productList.length>0 ?
+          <ProductList data={productList}
+              hideBtn="true"/> :
+          <Empty text="还没有加入任何产品～"/>
+      }
+
     </div>
   );
 }

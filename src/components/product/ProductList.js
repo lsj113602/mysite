@@ -7,7 +7,8 @@ import { getCart } from '../../utils/cartUnit';
 import useProductList from '../../containers/CustomHook/useProductList'
 import userTest from '../../containers/CustomHook/userTest'
 import { selectCartList } from '../../store/product/selector';
-import Itme from './Item'
+import Itme from './Item';
+import NoMore from '../../components/util/NoMore';
 import './productList.scss';
 
 const ProductList = ({p_key, data, hideBtn, history}) => {
@@ -40,6 +41,7 @@ const ProductList = ({p_key, data, hideBtn, history}) => {
           开始对比<p>({cartArr.length})</p>
         </div>
       }
+      <NoMore />
     </div>
   );
 }

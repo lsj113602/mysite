@@ -10,6 +10,7 @@ import { addCart, getCart, delCart } from '../../../utils/cartUnit';
 import Header from '../../../components/util/Header';
 import Banner from '../../../components/util/Banner';
 import ProductItem from '../../../components/product/ItemSmall';
+import NoMore from '../../../components/util/NoMore';
 import { useProductDetail, useProductList } from '../../../containers/CustomHook/useProductDetail';
 import './index.scss';
 
@@ -139,6 +140,7 @@ const ProductDetail = (props) => {
             })
           }
         </div>
+        <NoMore />
       </div>
       <div className="go_cart"
           onClick={() => toCart()}

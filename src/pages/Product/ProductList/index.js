@@ -71,7 +71,7 @@ class ProductList extends React.Component {
             />
           </div>
         </div>
-        <Bottom />
+        <Bottom cur="list"/>
       </div>
 
     )

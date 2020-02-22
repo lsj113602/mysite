@@ -54,7 +54,7 @@ const AboutUs = (props) => {
           </div>
         </div>
       </div>
-      <Bottom />
+      <Bottom cur="me"/>
     </div>
   );
 }

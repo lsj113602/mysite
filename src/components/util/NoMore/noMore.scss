@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import "../../../utils/scss/base";
+@import "../../../utils/scss/mixins";
+
+.no_more {
+  margin-top: px(20);
+  line-height: px(30);
+  color: #6c6c6c;
+  font-size: px(26);
+  text-align: center;
+}

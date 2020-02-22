@@ -9,8 +9,8 @@ function applyPrefix(prefix, obj) {
   return newObj;
 }
 export const commonPath = {
-  // IMG_CND_URL: 'http://134.175.218.206/images/'
-  IMG_CND_URL: 'http://localhost:8081/images/'
+  IMG_CND_URL: 'http://134.175.218.206/images/'
+  // IMG_CND_URL: 'http://localhost:8081/images/'
 };
 
 const apiPathObj = {
@@ -20,6 +20,8 @@ const apiPathObj = {
   GET_PRODUCT_DESC: 'product/getProductDesc',
   ADD_CART: 'product/addCard'
 };
+// const apiUrl = 'http://localhost:8000/api/';
+const apiUrl = 'http://134.175.218.206:8000/api/';
 
-export const apiPath = applyPrefix('http://localhost:8000/api/', apiPathObj);
+export const apiPath = applyPrefix(apiUrl, apiPathObj);
 

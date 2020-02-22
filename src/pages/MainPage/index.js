@@ -156,7 +156,7 @@ class MainPage extends React.Component {
 
             </div>
         </div>
-        <Bottom />
+        <Bottom cur="home"/>
       </div>
     )
   }

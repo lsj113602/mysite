@@ -1,8 +1,10 @@
 @charset "UTF-8";
 @import "../../../utils/scss/base";
 @import "../../../utils/scss/mixins";
-.product {
+.desc {
   padding-top: 96px;
+}
+.product {
   &__add {
     background: $main_color;
     width: 160px;

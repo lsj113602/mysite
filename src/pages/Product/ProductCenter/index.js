@@ -132,7 +132,7 @@ class ProductList extends React.Component {
 
           </div>
         </div>
-        <Bottom />
+        <Bottom cur="center"/>
       </div>
 
     )

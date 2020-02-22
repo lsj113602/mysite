@@ -3,10 +3,9 @@
 @import "../../utils/scss/mixins";
 
 .about {
-  padding: 126px 32px 140px;
-
+  padding-top: px(96);
   &__content {
-
+    padding: px(30) px(32) 140px;
   }
   &__title {
     height: 240px;
