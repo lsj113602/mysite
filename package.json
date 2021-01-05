@@ -55,7 +55,7 @@
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "4.2.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "prop-types": "^15.7.2",
     "react-cookies": "^0.1.0",
     "react-cookie": "^2.1.2",
